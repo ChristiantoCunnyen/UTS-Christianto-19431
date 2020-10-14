@@ -1,0 +1,187 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Update Produk</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2">
+        <ion-text class="ion-text-center"><h4>Form Update Produk</h4></ion-text>
+
+        <form [formGroup]="form" class="ion-padding-top">
+          <ion-list>
+
+            <ion-item>
+              <ion-label position="floating">Jenis</ion-label>
+              <ion-input type="text" formControlName="jenis" disabled></ion-input>
+            </ion-item>
+            <ion-item lines="none" *ngIf="!form.get('jenis').valid && form.get('jenis').touched">
+              <ion-label color="danger">Pilih Jenis Produk</ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Foto (Separate with Comma)</ion-label>
+              <ion-input type="text" formControlName="foto"></ion-input>
+            </ion-item>
+            <ion-item lines="none" *ngIf="!form.get('foto').valid && form.get('foto').touched">
+              <ion-label color="danger">Foto Produk Harus Diisi</ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Merek</ion-label>
+              <ion-input type="text" formControlName="merek"></ion-input>
+            </ion-item>
+            <ion-item lines="none" *ngIf="!form.get('merek').valid && form.get('merek').touched">
+              <ion-label color="danger">Merek Produk Harus Diisi</ion-label>
+            </ion-item>
+
+            <ion-item>
+              <ion-label position="floating">Model</ion-label>
+              <ion-input type="text" formControlName="model"></ion-input>
+            </ion-item>
+            <ion-item lines="none" *ngIf="!form.get('model').valid && form.get('model').touched">
+              <ion-label color="danger">Model Produk Harus Diisi</ion-label>
+            </ion-item>
+
+            <ion-row>
+              <ion-col size="6" class="ion-no-padding">
+                <ion-item>
+                  <ion-label position="floating">Harga</ion-label>
+                  <ion-input type="number" formControlName="harga"></ion-input>
+                </ion-item>
+                <ion-item lines="none" *ngIf="!form.get('harga').valid && form.get('harga').touched">
+                  <ion-label color="danger">Harga Produk Harus Diisi</ion-label>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="6" class="ion-no-padding ion-padding-start">
+                <ion-item>
+                  <ion-label position="floating">Stok</ion-label>
+                  <ion-input type="number" formControlName="stok"></ion-input>
+                </ion-item>
+                <ion-item lines="none" *ngIf="!form.get('stok').valid && form.get('stok').touched">
+                  <ion-label color="danger">Stok Produk Harus Diisi</ion-label>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <!-- CPU -->
+            <ion-row *ngIf="form.value.jenis == 'CPU'">
+              <ion-col size="6" class="ion-no-padding">
+                <ion-item>
+                  <ion-label position="floating">Base Clock</ion-label>
+                  <ion-input type="number" formControlName="base_clock"></ion-input>
+                </ion-item>
+                <ion-item lines="none" *ngIf="!form.get('base_clock').valid && form.get('base_clock').touched">
+                  <ion-label color="danger">Base Clock Produk Harus Diisi</ion-label>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="6" class="ion-no-padding ion-padding-start">
+                <ion-item>
+                  <ion-label position="floating">Boost Clock</ion-label>
+                  <ion-input type="number" formControlName="boost_clock"></ion-input>
+                </ion-item>
+                <ion-item lines="none" *ngIf="!form.get('boost_clock').valid && form.get('boost_clock').touched">
+                  <ion-label color="danger">Boost Clock Produk Harus Diisi</ion-label>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="6" class="ion-no-padding">
+                <ion-item>
+                  <ion-label position="floating">Jumlah Core</ion-label>
+                  <ion-input type="number" formControlName="jumlah_core"></ion-input>
+                </ion-item>
+                <ion-item lines="none" *ngIf="!form.get('jumlah_core').valid && form.get('jumlah_core').touched">
+                  <ion-label color="danger">Jumlah Core Produk Harus Diisi</ion-label>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="6" class="ion-no-padding ion-padding-start">
+                <ion-item>
+                  <ion-label position="floating">Jumlah Thread</ion-label>
+                  <ion-input type="number" formControlName="jumlah_thread"></ion-input>
+                </ion-item>
+                <ion-item lines="none" *ngIf="!form.get('jumlah_thread').valid && form.get('jumlah_thread').touched">
+                  <ion-label color="danger">Jumlah Thread Produk Harus Diisi</ion-label>
+                </ion-item>
+              </ion-col>
+
+            </ion-row>
+
+            <!-- RAM -->
+            <ion-row *ngIf="form.value.jenis == 'RAM'">
+              <ion-col size="6" class="ion-no-padding">
+                <ion-item>
+                  <ion-label position="floating">Speed</ion-label>
+                  <ion-input type="number" formControlName="speed"></ion-input>
+                </ion-item>
+                <ion-item lines="none" *ngIf="!form.get('speed').valid && form.get('speed').touched">
+                  <ion-label color="danger">Speed Produk Harus Diisi</ion-label>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="6" class="ion-no-padding ion-padding-start">
+                <ion-item>
+                  <ion-label position="floating">Ukuran</ion-label>
+                  <ion-input type="number" formControlName="ukuran"></ion-input>
+                </ion-item>
+                <ion-item lines="none" *ngIf="!form.get('ukuran').valid && form.get('ukuran').touched">
+                  <ion-label color="danger">Ukuran Produk Harus Diisi</ion-label>
+                </ion-item>
+              </ion-col>
+
+            </ion-row>
+
+
+            <!-- Motherboard -->
+            <ion-row *ngIf="form.value.jenis == 'Motherboard'">
+              <ion-col size="6" class="ion-no-padding">
+                <ion-item>
+                  <ion-label position="floating">Chipset</ion-label>
+                  <ion-input type="text" formControlName="chipset"></ion-input>
+                </ion-item>
+                <ion-item lines="none" *ngIf="!form.get('chipset').valid && form.get('chipset').touched">
+                  <ion-label color="danger">Chipset Produk Harus Diisi</ion-label>
+                </ion-item>
+              </ion-col>
+
+              <ion-col size="6" class="ion-no-padding ion-padding-start">
+                <ion-item>
+                  <ion-label position="floating">Merek Processor</ion-label>
+                  <ion-input type="text" formControlName="merek_processor"></ion-input>
+                </ion-item>
+                <ion-item lines="none" *ngIf="!form.get('merek_processor').valid && form.get('merek_processor').touched">
+                  <ion-label color="danger">Merek Processor Produk Harus Diisi</ion-label>
+                </ion-item>
+              </ion-col>
+
+            </ion-row>
+
+
+          </ion-list>
+          
+          <!-- GPU Button -->
+          <ion-button *ngIf="form.value.jenis == 'GPU'" class="ion-margin-top" type="submit" color="primary" (click)="onSubmit()" [disabled]="!form.get('jenis').valid || !form.get('foto').valid || !form.get('merek').valid || !form.get('model').valid || !form.get('harga').valid || !form.get('stok').valid">Update Produk</ion-button>
+
+          <!-- CPU Button -->
+          <ion-button *ngIf="form.value.jenis == 'CPU'" class="ion-margin-top" type="submit" color="primary" (click)="onSubmit()" [disabled]="!form.get('jenis').valid || !form.get('foto').valid || !form.get('merek').valid || !form.get('model').valid || !form.get('harga').valid || !form.get('stok').valid || !form.get('base_clock').valid || !form.get('boost_clock').valid || !form.get('jumlah_core').valid || !form.get('jumlah_thread').valid">Update Produk</ion-button>
+
+          <!-- RAM Button -->
+          <ion-button *ngIf="form.value.jenis == 'RAM'" class="ion-margin-top" type="submit" color="primary" (click)="onSubmit()" [disabled]="!form.get('jenis').valid || !form.get('foto').valid || !form.get('merek').valid || !form.get('model').valid || !form.get('harga').valid || !form.get('stok').valid || !form.get('speed').valid || !form.get('ukuran').valid">Update Produk</ion-button>
+
+          <!-- Motherboard Button -->
+          <ion-button *ngIf="form.value.jenis == 'Motherboard'" class="ion-margin-top" type="submit" color="primary" (click)="onSubmit()" [disabled]="!form.get('jenis').valid || !form.get('foto').valid || !form.get('merek').valid || !form.get('model').valid || !form.get('harga').valid || !form.get('stok').valid || !form.get('chipset').valid || !form.get('merek_processor').valid">Update Produk</ion-button>
+
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

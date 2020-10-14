@@ -1,0 +1,161 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Detail Produk</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2">
+        <ion-card>
+
+          <ion-row class="ion-justify-content-center">
+            <ion-col size="12" size-sm="5">
+              <ion-slides pager="true" [options]="slideOpts">
+                <ion-slide *ngFor="let foto of clickedProduct.foto">
+                  <ion-img [src]="foto"></ion-img>
+                </ion-slide>
+              </ion-slides>
+            </ion-col>
+          </ion-row>
+          
+          <ion-card-header>
+            <ion-card-title class="text-bold"> Informasi Produk </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="5" size-sm="3">
+                <ion-item lines="none">
+                  Jenis
+                </ion-item>
+                <ion-item lines="none">
+                  Merek 
+                </ion-item>
+                <ion-item lines="none">
+                  Model
+                </ion-item>
+                <ion-item lines="none">
+                  Harga
+                </ion-item>
+                <ion-item lines="none">
+                  Stok
+                </ion-item>
+              </ion-col>
+              <ion-col size="7" size-sm="9">
+                <ion-item lines="none">
+                  {{ clickedProduct.jenis }}
+                </ion-item>
+                <ion-item lines="none">
+                  {{ clickedProduct.merek }}
+                </ion-item>
+                <ion-item lines="none">
+                  {{ clickedProduct.model }}
+                </ion-item>
+                <ion-item lines="none">
+                  Rp. {{ clickedProduct.harga }},-
+                </ion-item>
+                <ion-item lines="none">
+                  {{ clickedProduct.stok }}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+
+          <ion-card-header *ngIf="clickedProduct.jenis != 'GPU'">
+            <ion-card-title class="text-bold"> Detail Produk </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-row>
+              <ion-col size="5" size-sm="3">
+                <!-- CPU -->
+                <div *ngIf="clickedProduct.jenis == 'CPU'">
+                  <ion-item lines="none">
+                    Base Clock
+                  </ion-item>
+                  <ion-item lines="none">
+                    Boost Clock
+                  </ion-item>
+                  <ion-item lines="none">
+                    Jumlah Core
+                  </ion-item>
+                  <ion-item lines="none">
+                    Jumlah Thread
+                  </ion-item>
+                </div>
+
+                 <!-- RAM -->
+                 <div *ngIf="clickedProduct.jenis == 'RAM'">
+                  <ion-item lines="none">
+                    Speed
+                  </ion-item>
+                  <ion-item lines="none">
+                    Ukuran
+                  </ion-item>
+                </div>
+
+                <!-- RAM -->
+                <div *ngIf="clickedProduct.jenis == 'Motherboard'">
+                  <ion-item lines="none">
+                    Chipset
+                  </ion-item>
+                  <ion-item lines="none">
+                    Merek Processor
+                  </ion-item>
+                </div>
+                
+              </ion-col>
+              <ion-col size="7" size-sm="9">
+                <!-- CPU -->
+                <div *ngIf="clickedProduct.jenis == 'CPU'">
+                  <ion-item lines="none">
+                    {{ clickedProduct.base_clock }} GHz
+                  </ion-item>
+                  <ion-item lines="none">
+                    {{ clickedProduct.boost_clock }} GHz
+                  </ion-item>
+                  <ion-item lines="none">
+                    {{ clickedProduct.jumlah_core }}
+                  </ion-item>
+                  <ion-item lines="none">
+                    {{ clickedProduct.jumlah_thread }}
+                  </ion-item>
+                </div>
+
+                <!-- RAM -->
+                <div *ngIf="clickedProduct.jenis == 'RAM'">
+                  <ion-item lines="none">
+                    {{ clickedProduct.speed }}
+                  </ion-item>
+                  <ion-item lines="none">
+                    {{ clickedProduct.ukuran }}
+                  </ion-item>
+                </div>
+
+                <!-- Motherboard -->
+                <div *ngIf="clickedProduct.jenis == 'Motherboard'">
+                  <ion-item lines="none">
+                    {{ clickedProduct.chipset }}
+                  </ion-item>
+                  <ion-item lines="none">
+                    {{ clickedProduct.merek_processor }}
+                  </ion-item>
+                </div>
+                
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+
+        </ion-card>
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

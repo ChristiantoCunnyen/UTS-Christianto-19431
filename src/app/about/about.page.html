@@ -1,0 +1,99 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="sidebarMenu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>About App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2">
+        <ion-row class="ion-justify-content-center ion-margin-bottom">
+          <ion-col size="8">
+            <ion-img src="assets/Profile.jpg"></ion-img>
+          </ion-col>
+
+          <ion-col size="12">
+            <ion-text class="ion-text-center">
+              <h3 class="text-bold">
+                Christianto - 00000019431 - BL
+              </h3>
+            </ion-text>
+          </ion-col>
+
+          <ion-col size="12">
+            <ion-text>
+              <p class="text-bold">
+                Dalam pengerjaan aplikasi ini:
+              </p>
+              - Saya mengerjakan aplikasi ini sendiri
+              <br>
+              - Saya dibantu oleh materi week 1-7, beserta tugas mingguan
+              <br>
+              - Saya dibantu oleh konten dalam stackoverflow dan website-website yang membahas ionic lainnya
+            </ion-text>
+          </ion-col>
+
+          <ion-col size="12">
+            <ion-text>
+              <p class="text-bold">Cara penggunaan aplikasi:</p>
+
+              <span class="text-bold">- Halaman Home</span>
+              <p class="ion-padding-start">
+                <span class="text-bold">Read</span>
+                <br>
+                1. Pada halaman Home, segala produk yang memiliki stok di atas 0 akan ditampilkan.
+                <br>
+                <span class="text-bold">Grid and List</span>
+                <br>
+                2. Pengguna dapat mengganti mode produk yang ditampilkan ke dalam bentuk List atau Grid dengan menekan icon button yang ada pada sisi kanan toolbar.
+                <br>
+                <span class="text-bold">Detail</span>
+                <br>
+                3. Dengan menekan salah satu item produk, pengguna akan diarahkan ke halaman detail yang menampilkan informasi detail dari produk tersebut berdasarkan jenisnya.
+                <br>
+                <span class="text-bold">Carousel</span>
+                <br>
+                4. Pada halaman detail, foto produk berada dalam bentuk carousel dengan menggunakan ion-slides, sehingga pengguna dapat menggeser foto ke kiri ataupun ke kanan untuk melihat foto produk lainnya.
+              </p>
+
+              <span class="text-bold">- Halaman Admin</span>
+              <p class="ion-padding-start">
+                <span class="text-bold">Read</span>
+                <br>
+                1. Pada halaman Admin, seluruh produk akan ditampilkan.
+                <br>
+                <span class="text-bold">Create</span>
+                <br>
+                2. Dengan menekan icon button '+' pada sisi kanan toolbar, Admin akan diarahkan pada form tambah produk, dimana Admin dapat memasukkan informasi-informasi mengenai produk berdasarkan jenis produk yang dipilih.
+                <br>
+                <span class="text-bold">Update dan Geser ke Kiri</span>
+                <br>
+                3. Dengan menggeser salah satu item produk ke kiri, terdapat icon update yang jika Admin tekan akan diarahkan ke form update produk untuk memperbaharui data dari produk tersebut berdasarkan jenisnya. 
+                <br>
+                4. Dalam pengisian form tambah produk dan form update produk, Admin harus mengisi seluruh input field dengan data yang valid agar button untuk menambah atau memperbaharui produk dapat ditekan.
+                <br>
+                <span class="text-bold">Multi Delete dan Geser ke Kanan</span>
+                <br>
+                5. Dengan menggeser salah satu item produk ke kanan, terdapat checkbox yang jika Admin centang akan menunjukkan bahwa produk tersebut masuk ke dalam list produk yang ingin dihapus.
+                <br>
+                6. Setelah memilih produk-produk yang ingin dihapus, Admin dapat menekan icon button delete (trash) yang ada pada sisi kanan toolbar untuk menghapus seluru produk yang telah dicentang.
+                <br>
+                7. Ketika Admin menekan icon button delete tersebut tanpa mencentang produk apapun, Toast akan muncul yang menunjukkan bahwa Admin harus mencentang setidaknya satu produk untuk menggunakan fitur delete tersebut.
+                <br>
+                <span class="text-bold">Detail</span>
+                <br>
+                8. Dengan menekan salah satu item produk, Admin akan diarahkan ke halaman detail yang menampilkan informasi detail dari produk tersebut berdasarkan jenisnya (fitur-fitur pada halaman detail Admin sama seperti halaman detail pengguna biasa).
+              </p>
+            </ion-text>
+          </ion-col>
+
+        </ion-row>
+        
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
